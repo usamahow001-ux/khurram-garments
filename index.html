@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Khurram Garments & Shopping Center | Kids Fashion & Garments</title>
+  <meta name="description" content="Shop premium kids garments, dresses, frocks, kurta pajama, and winter sets at Khurram Garments & Shopping Center, Ijaz Plaza, Mongowal Gharbi, Sargodha. Easy WhatsApp ordering!">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- TOP ANNOUNCEMENT BAR -->
+  <header class="top-bar">
+    <div class="container">
+      <div class="top-bar-left">
+        <span class="top-bar-item">
+          <i class="fa-solid fa-location-dot"></i> Shop #105, Ijaz Plaza, Sargodha Road, Mongowal Gharbi
+        </span>
+        <span class="top-bar-item">
+          <i class="fa-regular fa-clock"></i> Open Daily: 10:00 AM - 10:00 PM
+        </span>
+      </div>
+      <div class="top-bar-right">
+        <span class="top-bar-item">
+          <i class="fa-solid fa-truck-fast"></i> Cash On Delivery Available Across Pakistan
+        </span>
+        <a href="tel:03407548422" class="top-bar-item top-bar-link">
+          <i class="fa-solid fa-phone"></i> 03407548422
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN HEADER -->
+  <div class="header-main">
+    <div class="container">
+      <!-- BRAND -->
+      <a href="#" class="brand">
+        <img src="assets/images/logo.jpg" alt="Khurram Garments Logo" class="brand-logo-img">
+        <div class="brand-text">
+          <h1>Khurram Garments</h1>
+          <span>& Shopping Center • Kids Store</span>
+        </div>
+      </a>
+
+      <!-- SEARCH BAR -->
+      <div class="header-search">
+        <select class="search-category-select" id="search-category-select">
+          <option value="all">All Categories</option>
+          <option value="winter">Winter Collection '26</option>
+          <option value="boys">Boys Collection</option>
+          <option value="girls">Girls Collection</option>
+          <option value="festive">Festive & Eid</option>
+          <option value="baby">Baby & Newborn</option>
+        </select>
+        <input type="text" id="search-input" class="search-input" placeholder="Search kids frocks, suits, rompers, jackets...">
+        <button class="search-btn" title="Search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </div>
+
+      <!-- HEADER ACTIONS -->
+      <div class="header-actions">
+        <!-- Wishlist -->
+        <div class="action-item" onclick="showToast('Wishlist view opening soon')">
+          <div class="action-icon-wrap">
+            <i class="fa-regular fa-heart"></i>
+            <span class="action-badge" id="wishlist-badge">0</span>
+          </div>
+          <div class="action-text">
+            <span class="action-label">Wishlist</span>
+            <span class="action-value">Saved</span>
+          </div>
+        </div>
+
+        <!-- Cart Badge -->
+        <div class="action-item" onclick="openCartDrawer()" id="header-cart-btn">
+          <div class="action-icon-wrap">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="action-badge" id="cart-badge">0</span>
+          </div>
+          <div class="action-text">
+            <span class="action-label">My Cart</span>
+            <span class="action-value" id="cart-price-preview">Rs. 0</span>
+          </div>
+        </div>
+
+        <!-- WhatsApp Quick Direct -->
+        <a href="https://wa.me/923407548422?text=Hello%20Khurram%20Garments,%20I%20want%20to%20inquire%20about%20kids%20garments" target="_blank" class="btn-whatsapp-header">
+          <i class="fa-brands fa-whatsapp"></i> WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION BAR -->
+  <nav class="nav-bar">
+    <div class="container">
+      <ul class="nav-links">
+        <li><a href="#" class="nav-link active"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a href="#products-section" class="nav-link" onclick="filterCategoryFromBanner('winter')"><i class="fa-solid fa-snowflake"></i> Winter Collection '26</a></li>
+        <li><a href="#products-section" class="nav-link" onclick="filterCategoryFromBanner('boys')"><i class="fa-solid fa-child"></i> Boys Fashion</a></li>
+        <li><a href="#products-section" class="nav-link" onclick="filterCategoryFromBanner('girls')"><i class="fa-solid fa-child-dress"></i> Girls Frocks</a></li>
+        <li><a href="#products-section" class="nav-link" onclick="filterCategoryFromBanner('festive')"><i class="fa-solid fa-star"></i> Festive & Eid</a></li>
+        <li><a href="#products-section" class="nav-link" onclick="filterCategoryFromBanner('baby')"><i class="fa-solid fa-baby"></i> Newborn & Baby</a></li>
+        <li><a href="#store-location" class="nav-link"><i class="fa-solid fa-store"></i> Shop #105 (Ijaz Plaza)</a></li>
+      </ul>
+
+      <div class="nav-support">
+        <div class="nav-support-icon">
+          <i class="fa-solid fa-headset"></i>
+        </div>
+        <div class="nav-support-text">
+          <span>Direct Helpline</span>
+          <strong>03407548422</strong>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <!-- AUTO-PLAYING HERO BANNER SLIDER (TRADITION STORES STYLE - 2s/3s/5s AUTO-CHANGE) -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero-slider-wrap" id="hero-slider-wrap">
+
+        <!-- SLIDE 1: WINTER COLLECTION '26 IS HERE -->
+        <div class="hero-slide active slide-winter">
+          <div class="hero-bg-overlay"></div>
+          <div class="hero-bg-img-wrap">
+            <img src="assets/images/banner-slide-winter.jpg" alt="Winter China Parachute Mandis Jacket" class="hero-bg-img">
+            <div class="hero-floating-mini-card">
+              <img src="assets/images/product-pink-vest-set.jpg" alt="Girls Fleece Vest">
+              <div>
+                <strong>Girls Quilted Vest</strong>
+                <span>Rs. 1,895</span>
+              </div>
+            </div>
+          </div>
+          <div class="hero-content">
+            <span class="hero-pill winter-pill">
+              <i class="fa-solid fa-snowflake"></i> WINTER COLLECTION '26 IS HERE
+            </span>
+            <h2 class="hero-title">
+              Warm Fleece Hoodies &<br><span>Mandis Jackets ❄️</span>
+            </h2>
+            <div class="hero-discount-badge">
+              <span class="discount-prefix">FLAT</span>
+              <span class="discount-num">25<small>%</small></span>
+              <span class="discount-suffix">OFF</span>
+            </div>
+            <p class="hero-desc">
+              China Perashot windproof jackets, 3PCS quilted vests, and heavy fleece tracksuits for boys and girls.
+            </p>
+            <div class="hero-actions">
+              <a href="#products-section" class="btn-primary" onclick="filterCategoryFromBanner('winter')">
+                <i class="fa-solid fa-bag-shopping"></i> Shop Winter Collection
+              </a>
+              <a href="https://wa.me/923407548422?text=Hello%20Khurram%20Garments,%20I%20want%20to%20order%20Winter%20Jackets%20and%20Tracksuits" target="_blank" class="btn-outline">
+                <i class="fa-brands fa-whatsapp" style="color: #25D366;"></i> WhatsApp Order
+              </a>
+            </div>
+            <div class="hero-live-tag">
+              <i class="fa-solid fa-circle-dot live-dot"></i> Live at Store #105 (Ijaz Plaza) & Online
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDE 2: 100% CHILD-SAFE PURE COTTON FABRIC (KIDS BANNER EXAMPLE) -->
+        <div class="hero-slide slide-cotton">
+          <div class="hero-bg-overlay"></div>
+          <div class="hero-bg-img-wrap">
+            <img src="assets/images/banner-slide-cotton-kids.jpg" alt="Happy Kids Wearing Vibrant Clothes" class="hero-bg-img">
+          </div>
+          <div class="hero-content">
+            <span class="hero-pill cotton-pill">
+              <i class="fa-solid fa-sparkles"></i> 100% CHILD-SAFE PURE COTTON FABRIC
+            </span>
+            <h2 class="hero-title">
+              Bright Styles for<br><span>Little Smiles! 🎈</span>
+            </h2>
+            <div class="hero-discount-badge">
+              <span class="discount-prefix">UP TO</span>
+              <span class="discount-num">30<small>%</small></span>
+              <span class="discount-suffix">OFF</span>
+            </div>
+            <p class="hero-desc">
+              Explore premium kids fashion from newborn up to 14 years. Beautiful party frocks, festive Eid kurta sets, cozy winter wear, and daily cotton suits at shop-direct prices.
+            </p>
+            <div class="hero-actions">
+              <a href="#products-section" class="btn-primary" onclick="filterCategoryFromBanner('all')">
+                <i class="fa-solid fa-bag-shopping"></i> Explore Products
+              </a>
+              <a href="https://wa.me/923407548422?text=Hello%20Khurram%20Garments,%20please%20send%20me%20your%20latest%20kids%20catalog" target="_blank" class="btn-outline">
+                <i class="fa-brands fa-whatsapp" style="color: #25D366;"></i> WhatsApp Inquiry
+              </a>
+            </div>
+            <div class="hero-live-tag">
+              <i class="fa-solid fa-circle-dot live-dot"></i> Live at Store #105 (Ijaz Plaza) & Online
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDE 3: LUXURY LAWN COLLECTION '26 (TRADITION STORES STYLE) -->
+        <div class="hero-slide slide-lawn">
+          <div class="hero-bg-overlay"></div>
+          <div class="hero-bg-img-wrap">
+            <img src="assets/images/banner-slide-summer.jpg" alt="Luxury Lawn Collection" class="hero-bg-img">
+            <div class="hero-floating-mini-card">
+              <img src="assets/images/boys-cotton-suit.jpg" alt="Cotton Suit">
+              <div>
+                <strong>Pure Cotton Set</strong>
+                <span>Rs. 1,050</span>
+              </div>
+            </div>
+          </div>
+          <div class="hero-content">
+            <span class="hero-pill lawn-pill">
+              <i class="fa-solid fa-feather-pointed"></i> NEW LAWN ARRIVALS
+            </span>
+            <h2 class="hero-title tradition-style-title">
+              LUXURY LAWN<br><span>COLLECTION '26 🌸</span>
+            </h2>
+            <div class="hero-discount-badge">
+              <span class="discount-prefix">FLAT</span>
+              <span class="discount-num">25<small>%</small></span>
+              <span class="discount-suffix">OFF</span>
+            </div>
+            <p class="hero-desc">
+              Soft, breathable pure cotton lawn stitched suits for kids. Beautiful prints, lace embroidery borders, and vibrant cheerful colors.
+            </p>
+            <div class="hero-actions">
+              <a href="#products-section" class="btn-tradition-shop" onclick="filterCategoryFromBanner('girls')">
+                <i class="fa-solid fa-bag-shopping"></i> SHOP NOW
+              </a>
+              <a href="https://wa.me/923407548422?text=Hello%20Khurram%20Garments,%20I%20want%20to%20view%20Luxury%20Lawn%20Collection%2026" target="_blank" class="btn-outline">
+                <i class="fa-brands fa-whatsapp" style="color: #25D366;"></i> WhatsApp Inquiry
+              </a>
+            </div>
+            <div class="hero-live-tag">
+              <i class="fa-solid fa-circle-dot live-dot"></i> Live at Stores and Online
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDE 4: SUMMER COLLECTION '26 (TRADITION STORES STYLE) -->
+        <div class="hero-slide slide-summer">
+          <div class="hero-bg-overlay"></div>
+          <div class="hero-bg-img-wrap">
+            <img src="assets/images/hero-banner.jpg" alt="Summer Casual Kids Wear" class="hero-bg-img">
+            <div class="hero-floating-mini-card">
+              <img src="assets/images/product-boys-denim-set.jpg" alt="Boys Denim Set">
+              <div>
+                <strong>3PCS Denim Star Set</strong>
+                <span>Rs. 1,050</span>
+              </div>
+            </div>
+          </div>
+          <div class="hero-content">
+            <span class="hero-pill summer-pill">
+              <i class="fa-solid fa-sun"></i> SUMMER CASUAL ESSENTIALS
+            </span>
+            <h2 class="hero-title tradition-style-title">
+              SUMMER<br><span>COLLECTION '26 ☀️</span>
+            </h2>
+            <div class="hero-discount-badge">
+              <span class="discount-prefix">FLAT</span>
+              <span class="discount-num">30<small>%</small></span>
+              <span class="discount-suffix">OFF</span>
+            </div>
+            <p class="hero-desc">
+              Boys 2PCS washed denim sets, star graphic tees, cool shorts, and ultra-light cotton wear at wholesale direct rates.
+            </p>
+            <div class="hero-actions">
+              <a href="#products-section" class="btn-tradition-shop" onclick="filterCategoryFromBanner('boys')">
+                <i class="fa-solid fa-bag-shopping"></i> SHOP NOW
+              </a>
+              <a href="https://wa.me/923407548422?text=Hello%20Khurram%20Garments,%20I%20want%20to%20order%20Boys%20Summer%20Denim%20Sets" target="_blank" class="btn-outline">
+                <i class="fa-brands fa-whatsapp" style="color: #25D366;"></i> WhatsApp Order
+              </a>
+            </div>
+            <div class="hero-live-tag">
+              <i class="fa-solid fa-circle-dot live-dot"></i> Live at Stores and Online
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDE 5: BOYS THREE-STAR COAT PENT SUIT -->
+        <div class="hero-slide slide-formal">
+          <div class="hero-bg-overlay"></div>
+          <div class="hero-bg-img-wrap">
+            <img src="assets/images/banner-slide-festive.jpg" alt="Boys Three-Star Coat Pent Suit" class="hero-bg-img">
+            <div class="hero-floating-mini-card">
+              <img src="assets/images/traditional-kurta-pajama.jpg" alt="Festive Kurta">
+              <div>
+                <strong>Royal Eid Kurta</strong>
+                <span>Rs. 2,650</span>
+              </div>
+            </div>
+          </div>
+          <div class="hero-content">
+            <span class="hero-pill formal-pill">
+              <i class="fa-solid fa-star"></i> WEDDING & EID FESTIVE SPECIAL
+            </span>
+            <h2 class="hero-title">
+              Boys Three-Star<br><span>Formal Coat Pent 👔</span>
+            </h2>
+            <div class="hero-price-highlight">
+              <span class="price-hl-label">WHOLESALE DIRECT RATE:</span>
+              <span class="price-hl-val">Rs. 1,450 <s>Rs. 1,950</s></span>
+            </div>
+            <p class="hero-desc">
+              Complete formal suit with blazer, trousers, shirt, and bowtie in 5 regal colors (Sizes 16 to 24).
+            </p>
+            <div class="hero-actions">
+              <a href="#products-section" class="btn-primary" onclick="filterCategoryFromBanner('festive')">
+                <i class="fa-solid fa-bag-shopping"></i> Shop Formal Suits
+              </a>
+              <a href="https://wa.me/923407548422?text=Hello%20Khurram%20Garments,%20I%20want%20to%20order%20Boys%20Three-Star%20Coat%20Pent%20Suit" target="_blank" class="btn-outline">
+                <i class="fa-brands fa-whatsapp" style="color: #25D366;"></i> Book on WhatsApp
+              </a>
+            </div>
+            <div class="hero-live-tag">
+              <i class="fa-solid fa-circle-dot live-dot"></i> Live at Store #105 (Ijaz Plaza) & Online
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDE 6: LUXURY CHIFFON COLLECTION '26 (TRADITION STORES STYLE) -->
+        <div class="hero-slide slide-frock">
+          <div class="hero-bg-overlay"></div>
+          <div class="hero-bg-img-wrap">
+            <img src="assets/images/banner-slide-chiffon.jpg" alt="Girls Shimmer Fairy Frock" class="hero-bg-img">
+            <div class="hero-floating-mini-card">
+              <img src="assets/images/product-girls-knit-suit.jpg" alt="Dream Girl Knit Set">
+              <div>
+                <strong>Dream Girl Knit Set</strong>
+                <span>Rs. 1,650</span>
+              </div>
+            </div>
+          </div>
+          <div class="hero-content">
+            <span class="hero-pill frock-pill">
+              <i class="fa-solid fa-wand-magic-sparkles"></i> LUXURY BOUTIQUE COLLECTION
+            </span>
+            <h2 class="hero-title tradition-style-title">
+              LUXURY CHIFFON<br><span>COLLECTION '26 ✨</span>
+            </h2>
+            <div class="hero-discount-badge">
+              <span class="discount-prefix">FLAT</span>
+              <span class="discount-num">20<small>%</small></span>
+              <span class="discount-suffix">OFF</span>
+            </div>
+            <p class="hero-desc">
+              Glitter organza sheer puff sleeves, round pearl collar line, and floral corsage. Available in 6 fairytale colors.
+            </p>
+            <div class="hero-actions">
+              <a href="#products-section" class="btn-tradition-shop" onclick="filterCategoryFromBanner('girls')">
+                <i class="fa-solid fa-bag-shopping"></i> SHOP NOW
+              </a>
+              <a href="https://wa.me/923407548422?text=Hello%20Khurram%20Garments,%20I%20want%20to%20order%20Girls%20Fairy%20Frocks" target="_blank" class="btn-outline">
+                <i class="fa-brands fa-whatsapp" style="color: #25D366;"></i> WhatsApp Order
+              </a>
+            </div>
+            <div class="hero-live-tag">
+              <i class="fa-solid fa-circle-dot live-dot"></i> Live at Stores and Online
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDER CONTROLS BAR (TRADITION STORES STYLE: PREV, PILL DOTS, NEXT, SPEED SELECTOR) -->
+        <div class="slider-controls-bar">
+          <button class="slider-arrow-btn prev" id="slider-prev-btn" title="Previous Banner">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <div class="slider-dots" id="slider-dots">
+            <span class="slider-dot active" data-index="0" title="Slide 1: Winter Collection '26"></span>
+            <span class="slider-dot" data-index="1" title="Slide 2: Pure Cotton Styles"></span>
+            <span class="slider-dot" data-index="2" title="Slide 3: Luxury Lawn '26"></span>
+            <span class="slider-dot" data-index="3" title="Slide 4: Summer Collection '26"></span>
+            <span class="slider-dot" data-index="4" title="Slide 5: Festive Formal Suit"></span>
+            <span class="slider-dot" data-index="5" title="Slide 6: Luxury Chiffon '26"></span>
+          </div>
+          <button class="slider-arrow-btn next" id="slider-next-btn" title="Next Banner">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+</div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUE PILLARS (NEST STYLE) -->
+  <section class="container">
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-icon-box" style="background: #DEF9EC; color: #3BB77E;">
+          <i class="fa-solid fa-tag"></i>
+        </div>
+        <div>
+          <h4 class="value-title">Best Direct Prices</h4>
+          <p class="value-desc">Shop wholesale & retail rates straight from Ijaz Plaza #105</p>
+        </div>
+      </div>
+
+      <div class="value-card">
+        <div class="value-icon-box" style="background: #FFF8E5; color: #FDC040;">
+          <i class="fa-solid fa-truck-ramp-box"></i>
+        </div>
+        <div>
+          <h4 class="value-title">Cash on Delivery</h4>
+          <p class="value-desc">Fast delivery across Sargodha, Punjab & all over Pakistan</p>
+        </div>
+      </div>
+
+      <div class="value-card">
+        <div class="value-icon-box" style="background: #FDE1EA; color: #F74B81;">
+          <i class="fa-solid fa-shield-heart"></i>
+        </div>
+        <div>
+          <h4 class="value-title">100% Breathable Cotton</h4>
+          <p class="value-desc">Ultra-soft, irritation-free fabric tailored for sensitive baby skin</p>
+        </div>
+      </div>
+
+      <div class="value-card">
+        <div class="value-icon-box" style="background: #EBF4FC; color: #67BCEE;">
+          <i class="fa-solid fa-rotate-left"></i>
+        </div>
+        <div>
+          <h4 class="value-title">Easy Size Exchange</h4>
+          <p class="value-desc">Worry-free shopping with prompt size replacement guarantee</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS SECTION -->
+  <section class="container" id="products-section" style="padding-top: 18px;">
+    <!-- SECTION HEADER & TABS -->
+    <div class="section-header">
+      <div>
+        <h2 class="section-title">Kids Wear Catalog</h2>
+        <p class="section-subtitle">Real in-stock collection for boys, girls, infants & toddlers</p>
+      </div>
+
+      <!-- Category Filter Pills -->
+      <div class="category-filter-tabs">
+        <button class="cat-tab-btn active" data-category="all">All Products</button>
+        <button class="cat-tab-btn" data-category="winter">❄️ Winter Collection '26</button>
+        <button class="cat-tab-btn" data-category="boys">👦 Boys Fashion</button>
+        <button class="cat-tab-btn" data-category="girls">👧 Girls Frocks</button>
+        <button class="cat-tab-btn" data-category="festive">✨ Festive & Eid</button>
+        <button class="cat-tab-btn" data-category="baby">👶 Baby & Newborn</button>
+      </div>
+    </div>
+
+    <!-- PRODUCTS GRID (DYNAMICALLY RENDERED BY APP.JS) -->
+    <div class="products-grid" id="products-grid">
+      <!-- Items generated by app.js -->
+    </div>
+  </section>
+
+  <!-- PROMOTIONAL BANNERS (NEST DUAL BANNERS) -->
+  <section class="container">
+    <div class="promo-banners-grid">
+      <div class="promo-banner promo-banner-1">
+        <span class="promo-badge">Festive Special</span>
+        <h3 class="promo-title">Boys Three-Star Suits &<br>Girls Princess Frocks</h3>
+        <p class="promo-desc">Finely crafted festive wear with premium embroidery, bowties, and matching dupattas.</p>
+        <div>
+          <button class="btn-primary" onclick="filterCategoryFromBanner('festive')">Browse Festive Wear</button>
+        </div>
+      </div>
+
+      <div class="promo-banner promo-banner-2">
+        <span class="promo-badge">Winter Arrival</span>
+        <h3 class="promo-title">China Parachute Jackets<br>& Embossed Fleece Sets</h3>
+        <p class="promo-desc">Keep your active kids cozy, comfortable, and trendy throughout chilly winter days.</p>
+        <div>
+          <button class="btn-primary" onclick="filterCategoryFromBanner('winter')">Shop Winter Collection</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORE LOCATION & VISITING SECTION -->
+  <section class="container" id="store-location">
+    <div class="store-showcase-section">
+      <div class="store-showcase-grid">
+        <div>
+          <span class="hero-pill"><i class="fa-solid fa-shop"></i> Physical Store Location</span>
+          <h2 class="store-info-title">Welcome to Khurram Garments & Shopping Center</h2>
+          <p class="store-info-desc">
+            Visit our retail store in Mongowal Gharbi on Sargodha Road to explore our entire kids garment collection in person. Feel the fabric quality, check custom sizes, and get wholesale-friendly prices!
+          </p>
+
+          <div class="store-details-list">
+            <div class="store-detail-item">
+              <div class="store-detail-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+              <div class="store-detail-content">
+                <strong>Address:</strong>
+                <span>Shop No. 105, Ijaz Plaza, Sargodha Road, Mongowal Gharbi, Punjab, Pakistan</span>
+              </div>
+            </div>
+
+            <div class="store-detail-item">
+              <div class="store-detail-icon"><i class="fa-solid fa-phone-volume"></i></div>
+              <div class="store-detail-content">
+                <strong>Call & WhatsApp Ordering:</strong>
+                <span>03407548422 (Quick orders, bulk inquiries & delivery status)</span>
+              </div>
+            </div>
+
+            <div class="store-detail-item">
+              <div class="store-detail-icon"><i class="fa-solid fa-clock"></i></div>
+              <div class="store-detail-content">
+                <strong>Store Hours:</strong>
+                <span>Monday - Sunday: 10:00 AM - 10:00 PM (Open 7 Days a week)</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+            <a href="https://wa.me/923407548422?text=Hello%20Khurram%20Garments,%20I%20want%20directions%20to%20your%20shop%20at%20Ijaz%20Plaza" target="_blank" class="btn-primary" style="background: #25D366;">
+              <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+            </a>
+            <a href="https://maps.google.com/?q=Sargodha+Road+Mongowal+Gharbi+Punjab+Pakistan" target="_blank" class="btn-outline">
+              <i class="fa-solid fa-location-arrow"></i> Open in Google Maps
+            </a>
+          </div>
+        </div>
+
+        <div class="store-map-card">
+          <div class="map-pin-icon">
+            <i class="fa-solid fa-location-dot"></i>
+          </div>
+          <h3 style="font-size: 20px; color: var(--heading); margin-bottom: 6px;">Ijaz Plaza • Shop #105</h3>
+          <p style="font-size: 13px; color: var(--text-muted); max-width: 280px; margin-bottom: 18px;">
+            Sargodha Road, Mongowal Gharbi, Punjab. Prominent shopping hub with parking & easy access.
+          </p>
+          <div style="background: #fff; padding: 10px 18px; border-radius: var(--radius-pill); font-size: 12.5px; font-weight: 700; color: var(--primary); box-shadow: var(--shadow-sm);">
+            <i class="fa-solid fa-circle-check"></i> Verified Retail Store
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SITE FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Khurram Garments</h3>
+          <p>
+            Your trusted destination for delightful, skin-safe, and affordable kids wear. From everyday playtime essentials to elegant party dresses and Eid celebrations.
+          </p>
+          <div style="font-size: 13px; color: #9AA7AF;">
+            <i class="fa-solid fa-location-pin" style="color: var(--primary); margin-right: 6px;"></i> Shop No. 105, Ijaz Plaza, Mongowal Gharbi
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Categories</h4>
+          <ul class="footer-links">
+            <li><a href="#products-section" class="footer-link" onclick="filterCategoryFromBanner('winter')">Winter Collection '26</a></li>
+            <li><a href="#products-section" class="footer-link" onclick="filterCategoryFromBanner('boys')">Boys Fashion & Suits</a></li>
+            <li><a href="#products-section" class="footer-link" onclick="filterCategoryFromBanner('girls')">Girls Frocks & Gowns</a></li>
+            <li><a href="#products-section" class="footer-link" onclick="filterCategoryFromBanner('festive')">Festive Three-Star Suits</a></li>
+            <li><a href="#products-section" class="footer-link" onclick="filterCategoryFromBanner('baby')">Baby & Newborn Rompers</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Customer Care</h4>
+          <ul class="footer-links">
+            <li><a href="tel:03407548422" class="footer-link">Helpline: 03407548422</a></li>
+            <li><a href="#store-location" class="footer-link">Store Location & Timings</a></li>
+            <li><a href="javascript:void(0)" onclick="openCartDrawer()" class="footer-link">View Shopping Cart</a></li>
+            <li><a href="javascript:void(0)" onclick="showToast('Cash on delivery available nationwide')" class="footer-link">Payment: Cash on Delivery</a></li>
+            <li><a href="javascript:void(0)" onclick="showToast('Size exchanges accepted within 7 days')" class="footer-link">Easy Exchange Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Direct Order Helpline</h4>
+          <p style="color: #9AA7AF; font-size: 13px; margin-bottom: 14px;">
+            Order easily on WhatsApp. Just send a screenshot or your selected items and we'll dispatch it to your doorstep!
+          </p>
+          <a href="https://wa.me/923407548422?text=Hello%20Khurram%20Garments,%20I%20want%20to%20order" target="_blank" class="btn-primary" style="background: #25D366; width: fit-content; padding: 10px 20px; font-size: 13px;">
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp: 03407548422
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Khurram Garments and Shopping Center. All Rights Reserved.</div>
+        <div>Shop #105, Ijaz Plaza, Sargodha Road, Mongowal Gharbi, Punjab, Pakistan</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SLIDE-OVER CART DRAWER -->
+  <div class="cart-backdrop" id="cart-backdrop" onclick="closeCartDrawer()">
+    <div class="cart-drawer" onclick="event.stopPropagation()">
+      <div class="cart-header">
+        <h3><i class="fa-solid fa-bag-shopping" style="color: var(--primary);"></i> Your Cart</h3>
+        <button class="cart-close-btn" onclick="closeCartDrawer()"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+
+      <div class="free-shipping-box">
+        <span id="shipping-progress-text">Add <strong>Rs. 2,500</strong> for <strong>FREE Delivery</strong>!</span>
+        <div class="shipping-progress-track">
+          <div class="shipping-progress-fill" id="shipping-progress-fill" style="width: 0%;"></div>
+        </div>
+      </div>
+
+      <!-- Items List -->
+      <div class="cart-items-list" id="cart-items-list">
+        <!-- Rendered by JS -->
+      </div>
+
+      <!-- Cart Footer & WhatsApp Checkout -->
+      <div class="cart-footer">
+        <div class="cart-totals-row">
+          <span>Subtotal:</span>
+          <span id="cart-subtotal" style="font-weight: 700; color: var(--heading);">Rs. 0</span>
+        </div>
+        <div class="cart-totals-row">
+          <span>Shipping:</span>
+          <span id="cart-shipping">Rs. 0</span>
+        </div>
+        <div class="cart-totals-row grand-total">
+          <span>Total:</span>
+          <span class="total-amount" id="cart-grand-total">Rs. 0</span>
+        </div>
+
+        <!-- Fast Order Form -->
+        <div class="checkout-quick-form">
+          <input type="text" id="checkout-name" class="checkout-input" placeholder="Your Full Name *" required>
+          <input type="tel" id="checkout-phone" class="checkout-input" placeholder="Phone Number (e.g. 03001234567) *" required>
+          <input type="text" id="checkout-address" class="checkout-input" placeholder="Complete Delivery Address & City *" required>
+        </div>
+
+        <button class="btn-order-whatsapp" onclick="sendWhatsAppOrder()">
+          <i class="fa-brands fa-whatsapp"></i> Confirm & Order on WhatsApp
+        </button>
+        <div style="text-align: center; font-size: 11px; color: var(--text-muted); margin-top: 8px;">
+          <i class="fa-solid fa-shield-halved"></i> 100% Cash on Delivery (Pay when you receive)
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUICK VIEW MODAL -->
+  <div class="modal-backdrop" id="quick-view-backdrop" onclick="closeQuickView()">
+    <div class="modal-dialog" onclick="event.stopPropagation()">
+      <button class="modal-close-btn" onclick="closeQuickView()"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-body">
+        <div class="modal-img-wrap">
+          <img id="modal-img" src="" alt="Product Preview" class="modal-img">
+        </div>
+        <div class="modal-content-details">
+          <div class="product-rating" style="margin-bottom: 6px;">
+            <i class="fa-solid fa-star"></i> <strong id="modal-rating">5.0 (42 reviews)</strong>
+          </div>
+          <h2 id="modal-title" style="font-size: 20px; line-height: 1.3; margin-bottom: 8px;">Product Title</h2>
+          <div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 14px;">
+            <span id="modal-price" style="font-size: 22px; font-weight: 800; color: var(--primary);">Rs. 0</span>
+            <span id="modal-old-price" style="font-size: 14px; color: var(--text-muted); text-decoration: line-through;">Rs. 0</span>
+          </div>
+          <p id="modal-desc" style="font-size: 13.5px; color: var(--text-body); line-height: 1.5; margin-bottom: 14px;">Product description goes here.</p>
+
+          <div class="modal-sizes-group">
+            <div class="modal-sizes-title">Select Child Age / Size:</div>
+            <div id="modal-sizes-container">
+              <!-- Dynamically populated buttons -->
+            </div>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 14px; margin-top: auto; padding-top: 14px;">
+            <div class="qty-counter-control" style="padding: 6px 12px;">
+              <button class="qty-btn" onclick="adjustModalQty(-1)">-</button>
+              <span class="qty-display" id="modal-qty-val" style="min-width: 24px;">1</span>
+              <button class="qty-btn" onclick="adjustModalQty(1)">+</button>
+            </div>
+            <button class="btn-primary" style="flex: 1; justify-content: center;" onclick="addModalToCart()">
+              <i class="fa-solid fa-cart-shopping"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING WHATSAPP BUTTON -->
+  <a href="https://wa.me/923407548422?text=Hello%20Khurram%20Garments,%20I%20have%20a%20question%20about%20your%20products" target="_blank" class="floating-whatsapp" title="Chat on WhatsApp (03407548422)">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast-notice" id="toast-notice">
+    <i class="fa-solid fa-circle-check toast-icon"></i>
+    <span id="toast-message">Added to Cart!</span>
+  </div>
+
+  <!-- MOBILE BOTTOM NAVIGATION BAR -->
+  <div class="mobile-bottom-nav">
+    <div class="mobile-bottom-items">
+      <a href="#" class="mobile-nav-btn active">
+        <i class="fa-solid fa-house"></i>
+        <span>Home</span>
+      </a>
+      <a href="#products-section" class="mobile-nav-btn" onclick="filterCategoryFromBanner('winter')">
+        <i class="fa-solid fa-snowflake"></i>
+        <span>Winter</span>
+      </a>
+      <button class="mobile-nav-btn" onclick="openCartDrawer()">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="action-badge" id="mobile-cart-badge" style="top: -4px; right: 8px;">0</span>
+        <span>Cart</span>
+      </button>
+      <a href="https://wa.me/923407548422" target="_blank" class="mobile-nav-btn" style="color: #25D366;">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span>Order</span>
+      </a>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
