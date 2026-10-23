@@ -585,25 +585,7 @@ function sendWhatsAppOrder() {
 }
 
 // =========================================================
-// TOP SLIDING ANNOUNCEMENT TICKER (AUTO-ROTATION 3.5s)
-// =========================================================
-function initAnnouncementTicker() {
-  const slides = document.querySelectorAll('.announcement-slide');
-  const prevBtn = document.getElementById('ticker-prev');
-  const nextBtn = document.getElementById('ticker-next');
-  const slider = document.getElementById('announcement-slider');
-  let currentIdx = 0;
-  let tickerTimer = null;
-  const TICKER_INTERVAL_MS = 3500;
-
-  if (!slides.length) return;
-
-  function showAnnouncement(idx) {
-    slides.forEach((s, i) => s.classList.toggle('active', i === idx));
-    currentIdx = idx;
-  }
-
-  function nextAnnouncement() {
+function nextAnnouncement() {
     showAnnouncement((currentIdx + 1) % slides.length);
   }
 
@@ -814,7 +796,6 @@ document.addEventListener('DOMContentLoaded', () => {
     wishlistBadge.textContent = wishlist.length;
   }
 
-  initAnnouncementTicker();
   initHeroSlider();
   updateCartUI();
   renderProducts();

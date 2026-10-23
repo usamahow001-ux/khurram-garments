@@ -66,7 +66,7 @@ button {
   padding: 0 20px;
 }
 
-/* TOP SLIDING ANNOUNCEMENT TICKER (MARQUEE / SLIDER) */
+/* TOP CONTINUOUS SLIDING MARQUEE TICKER (AUTO-ROTATING ALL POINTS) */
 .top-announcement-ticker {
   background: #0F172A;
   color: #E2E8F0;
@@ -76,86 +76,61 @@ button {
   position: relative;
   overflow: hidden;
   border-bottom: 1px solid rgba(255,255,255,0.08);
-  z-index: 101;
-}
-.announcement-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  position: relative;
-}
-.announcement-nav-btn {
-  background: transparent;
-  border: none;
-  color: #94A3B8;
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 10.5px;
-  transition: var(--transition);
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 5;
-}
-.announcement-nav-btn:hover {
-  color: #fff;
-  background: rgba(255,255,255,0.12);
-}
-.announcement-nav-btn.prev { left: 16px; }
-.announcement-nav-btn.next { right: 16px; }
-.announcement-slider {
-  position: relative;
-  width: 100%;
-  max-width: 820px;
-  height: 38px;
-  text-align: center;
-  overflow: hidden;
-}
-.announcement-slide {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(10px);
-  transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   white-space: nowrap;
+  z-index: 101;
+  display: flex;
+  align-items: center;
+}
+.ticker-track-wrap {
+  width: 100%;
   overflow: hidden;
-  text-overflow: ellipsis;
-  padding: 0 30px;
+  display: flex;
 }
-.announcement-slide.active {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
+.ticker-track {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  animation: continuousTickerSlide 34s linear infinite;
+  will-change: transform;
 }
-.announcement-slide i {
-  color: var(--primary);
+.top-announcement-ticker:hover .ticker-track {
+  animation-play-state: paused;
+}
+@keyframes continuousTickerSlide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.ticker-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 16px;
+  color: #E2E8F0;
   font-size: 12.5px;
 }
-.announcement-slide strong {
+.ticker-item i {
+  color: var(--primary);
+  font-size: 13px;
+}
+.ticker-item strong {
   color: #fff;
   font-weight: 700;
 }
-.announcement-slide a {
+.ticker-item a {
   color: #FBBF24;
   font-weight: 700;
   text-decoration: none;
-  margin-left: 6px;
+  margin-left: 4px;
   transition: var(--transition);
 }
-.announcement-slide a:hover {
+.ticker-item a:hover {
   color: #fff;
   text-decoration: underline;
+}
+.ticker-separator {
+  color: rgba(255,255,255,0.35);
+  font-size: 14px;
+  padding: 0 4px;
 }
 
 /* HEADER CASH ON DELIVERY TRUST BADGE */

@@ -8,34 +8,82 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>  <!-- TOP SLIDING ANNOUNCEMENT TICKER (AUTO-ROTATING) -->
+<body>  <!-- TOP CONTINUOUS SLIDING TICKER (AUTO-ROTATING ALL POINTS) -->
   <aside class="top-announcement-ticker" aria-label="Store Announcements">
-    <div class="container announcement-container">
-      <button class="announcement-nav-btn prev" id="ticker-prev" title="Previous Announcement">
-        <i class="fa-solid fa-chevron-left"></i>
-      </button>
-
-      <div class="announcement-slider" id="announcement-slider">
-        <div class="announcement-slide active">
-          <i class="fa-solid fa-snowflake"></i> <strong>Winter Collection '26 is Live!</strong> FLAT 25% OFF on Warm Fleece Hoodies &amp; Mandis Jackets <a href="#products-section" onclick="filterCategoryFromBanner('winter')">Shop Winter &rarr;</a>
+    <div class="ticker-track-wrap">
+      <div class="ticker-track">
+        <!-- FIRST SET OF POINTS -->
+        <div class="ticker-item">
+          <i class="fa-solid fa-snowflake"></i> <strong>Winter Collection '26 is Live!</strong> FLAT 25% OFF on Warm Fleece Hoodies &amp; Jackets <a href="#products-section" onclick="filterCategoryFromBanner('winter')">Shop Winter &rarr;</a>
         </div>
-        <div class="announcement-slide">
+        <div class="ticker-separator">&bull;</div>
+        
+        <div class="ticker-item">
           <i class="fa-solid fa-sun"></i> <strong>Summer &amp; Luxury Lawn '26:</strong> Pure Combed Cotton Outfits for Kids <a href="#products-section" onclick="filterCategoryFromBanner('all')">Explore Now &rarr;</a>
         </div>
-        <div class="announcement-slide">
-          <i class="fa-solid fa-fire"></i> <strong>Special Seasonal Offer:</strong> UP TO 30% OFF on Boys &amp; Girls Everyday Essentials <a href="#products-section">Browse Sale &rarr;</a>
-        </div>
-        <div class="announcement-slide">
-          <i class="fa-solid fa-star"></i> <strong>Wedding &amp; Eid Festive Special:</strong> Boys Three-Star Coat Pent Suits at Direct Wholesale Rs. 1,450 <a href="#products-section" onclick="filterCategoryFromBanner('festive')">View Suit &rarr;</a>
-        </div>
-        <div class="announcement-slide">
-          <i class="fa-solid fa-truck-fast"></i> <strong>Free Shipping Offer:</strong> FREE Delivery across Pakistan on all orders over Rs. 2,500!
-        </div>
-      </div>
+        <div class="ticker-separator">&bull;</div>
 
-      <button class="announcement-nav-btn next" id="ticker-next" title="Next Announcement">
-        <i class="fa-solid fa-chevron-right"></i>
-      </button>
+        <div class="ticker-item">
+          <i class="fa-solid fa-truck-fast"></i> <strong>Nationwide Free Delivery:</strong> FREE Shipping on orders over Rs. 2,500 across Pakistan!
+        </div>
+        <div class="ticker-separator">&bull;</div>
+
+        <div class="ticker-item">
+          <i class="fa-solid fa-star"></i> <strong>Wedding &amp; Eid Festive Special:</strong> Boys Three-Star Coat Pent Suits at Wholesale Rs. 1,450 <a href="#products-section" onclick="filterCategoryFromBanner('festive')">View Suit &rarr;</a>
+        </div>
+        <div class="ticker-separator">&bull;</div>
+
+        <div class="ticker-item">
+          <i class="fa-solid fa-wand-magic-sparkles"></i> <strong>Boutique Fairytale Frocks:</strong> Shimmer Puff Sleeve Dresses &mdash; FLAT 20% OFF <a href="#products-section" onclick="filterCategoryFromBanner('girls')">Shop Frocks &rarr;</a>
+        </div>
+        <div class="ticker-separator">&bull;</div>
+
+        <div class="ticker-item">
+          <i class="fa-solid fa-shield-heart"></i> <strong>100% Child-Safe Pure Cotton:</strong> Breathable, irritation-free fabrics for sensitive baby skin
+        </div>
+        <div class="ticker-separator">&bull;</div>
+
+        <div class="ticker-item">
+          <i class="fa-solid fa-shop"></i> <strong>Wholesale Direct Rates:</strong> Shop direct from Shop #105, Ijaz Plaza, Sargodha Road
+        </div>
+        <div class="ticker-separator">&bull;</div>
+
+        <!-- DUPLICATE SET FOR INFINITE SEAMLESS LOOP -->
+        <div class="ticker-item">
+          <i class="fa-solid fa-snowflake"></i> <strong>Winter Collection '26 is Live!</strong> FLAT 25% OFF on Warm Fleece Hoodies &amp; Jackets <a href="#products-section" onclick="filterCategoryFromBanner('winter')">Shop Winter &rarr;</a>
+        </div>
+        <div class="ticker-separator">&bull;</div>
+        
+        <div class="ticker-item">
+          <i class="fa-solid fa-sun"></i> <strong>Summer &amp; Luxury Lawn '26:</strong> Pure Combed Cotton Outfits for Kids <a href="#products-section" onclick="filterCategoryFromBanner('all')">Explore Now &rarr;</a>
+        </div>
+        <div class="ticker-separator">&bull;</div>
+
+        <div class="ticker-item">
+          <i class="fa-solid fa-truck-fast"></i> <strong>Nationwide Free Delivery:</strong> FREE Shipping on orders over Rs. 2,500 across Pakistan!
+        </div>
+        <div class="ticker-separator">&bull;</div>
+
+        <div class="ticker-item">
+          <i class="fa-solid fa-star"></i> <strong>Wedding &amp; Eid Festive Special:</strong> Boys Three-Star Coat Pent Suits at Wholesale Rs. 1,450 <a href="#products-section" onclick="filterCategoryFromBanner('festive')">View Suit &rarr;</a>
+        </div>
+        <div class="ticker-separator">&bull;</div>
+
+        <div class="ticker-item">
+          <i class="fa-solid fa-wand-magic-sparkles"></i> <strong>Boutique Fairytale Frocks:</strong> Shimmer Puff Sleeve Dresses &mdash; FLAT 20% OFF <a href="#products-section" onclick="filterCategoryFromBanner('girls')">Shop Frocks &rarr;</a>
+        </div>
+        <div class="ticker-separator">&bull;</div>
+
+        <div class="ticker-item">
+          <i class="fa-solid fa-shield-heart"></i> <strong>100% Child-Safe Pure Cotton:</strong> Breathable, irritation-free fabrics for sensitive baby skin
+        </div>
+        <div class="ticker-separator">&bull;</div>
+
+        <div class="ticker-item">
+          <i class="fa-solid fa-shop"></i> <strong>Wholesale Direct Rates:</strong> Shop direct from Shop #105, Ijaz Plaza, Sargodha Road
+        </div>
+        <div class="ticker-separator">&bull;</div>
+      </div>
     </div>
   </aside>
 
