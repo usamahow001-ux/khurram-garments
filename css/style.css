@@ -90,7 +90,7 @@ button {
   display: inline-flex;
   align-items: center;
   white-space: nowrap;
-  animation: continuousTickerSlide 34s linear infinite;
+  animation: continuousTickerSlide 52s linear infinite;
   will-change: transform;
 }
 .top-announcement-ticker:hover .ticker-track {
