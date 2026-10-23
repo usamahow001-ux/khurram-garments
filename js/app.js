@@ -585,6 +585,69 @@ function sendWhatsAppOrder() {
 }
 
 // =========================================================
+// TOP SLIDING ANNOUNCEMENT TICKER (AUTO-ROTATION 3.5s)
+// =========================================================
+function initAnnouncementTicker() {
+  const slides = document.querySelectorAll('.announcement-slide');
+  const prevBtn = document.getElementById('ticker-prev');
+  const nextBtn = document.getElementById('ticker-next');
+  const slider = document.getElementById('announcement-slider');
+  let currentIdx = 0;
+  let tickerTimer = null;
+  const TICKER_INTERVAL_MS = 3500;
+
+  if (!slides.length) return;
+
+  function showAnnouncement(idx) {
+    slides.forEach((s, i) => s.classList.toggle('active', i === idx));
+    currentIdx = idx;
+  }
+
+  function nextAnnouncement() {
+    showAnnouncement((currentIdx + 1) % slides.length);
+  }
+
+  function prevAnnouncement() {
+    showAnnouncement((currentIdx - 1 + slides.length) % slides.length);
+  }
+
+  function startTicker() {
+    stopTicker();
+    tickerTimer = setInterval(nextAnnouncement, TICKER_INTERVAL_MS);
+  }
+
+  function stopTicker() {
+    if (tickerTimer) {
+      clearInterval(tickerTimer);
+      tickerTimer = null;
+    }
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      nextAnnouncement();
+      startTicker();
+    });
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      prevAnnouncement();
+      startTicker();
+    });
+  }
+
+  if (slider) {
+    slider.addEventListener('mouseenter', stopTicker);
+    slider.addEventListener('mouseleave', startTicker);
+  }
+
+  showAnnouncement(0);
+  startTicker();
+}
+
 // HERO BANNER SLIDER (TRADITION STORES STYLE - FIXED 5s AUTO-PLAY)
 // =========================================================
 let currentSlideIndex = 0;
@@ -751,6 +814,7 @@ document.addEventListener('DOMContentLoaded', () => {
     wishlistBadge.textContent = wishlist.length;
   }
 
+  initAnnouncementTicker();
   initHeroSlider();
   updateCartUI();
   renderProducts();

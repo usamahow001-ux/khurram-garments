@@ -8,29 +8,36 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body>  <!-- TOP SLIDING ANNOUNCEMENT TICKER (AUTO-ROTATING) -->
+  <aside class="top-announcement-ticker" aria-label="Store Announcements">
+    <div class="container announcement-container">
+      <button class="announcement-nav-btn prev" id="ticker-prev" title="Previous Announcement">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
 
-  <!-- TOP ANNOUNCEMENT BAR -->
-  <header class="top-bar">
-    <div class="container">
-      <div class="top-bar-left">
-        <span class="top-bar-item">
-          <i class="fa-solid fa-location-dot"></i> Shop #105, Ijaz Plaza, Sargodha Road, Mongowal Gharbi
-        </span>
-        <span class="top-bar-item">
-          <i class="fa-regular fa-clock"></i> Open Daily: 10:00 AM - 10:00 PM
-        </span>
+      <div class="announcement-slider" id="announcement-slider">
+        <div class="announcement-slide active">
+          <i class="fa-solid fa-snowflake"></i> <strong>Winter Collection '26 is Live!</strong> FLAT 25% OFF on Warm Fleece Hoodies &amp; Mandis Jackets <a href="#products-section" onclick="filterCategoryFromBanner('winter')">Shop Winter &rarr;</a>
+        </div>
+        <div class="announcement-slide">
+          <i class="fa-solid fa-sun"></i> <strong>Summer &amp; Luxury Lawn '26:</strong> Pure Combed Cotton Outfits for Kids <a href="#products-section" onclick="filterCategoryFromBanner('all')">Explore Now &rarr;</a>
+        </div>
+        <div class="announcement-slide">
+          <i class="fa-solid fa-fire"></i> <strong>Special Seasonal Offer:</strong> UP TO 30% OFF on Boys &amp; Girls Everyday Essentials <a href="#products-section">Browse Sale &rarr;</a>
+        </div>
+        <div class="announcement-slide">
+          <i class="fa-solid fa-star"></i> <strong>Wedding &amp; Eid Festive Special:</strong> Boys Three-Star Coat Pent Suits at Direct Wholesale Rs. 1,450 <a href="#products-section" onclick="filterCategoryFromBanner('festive')">View Suit &rarr;</a>
+        </div>
+        <div class="announcement-slide">
+          <i class="fa-solid fa-truck-fast"></i> <strong>Free Shipping Offer:</strong> FREE Delivery across Pakistan on all orders over Rs. 2,500!
+        </div>
       </div>
-      <div class="top-bar-right">
-        <span class="top-bar-item">
-          <i class="fa-solid fa-truck-fast"></i> Cash On Delivery Available Across Pakistan
-        </span>
-        <a href="tel:03407548422" class="top-bar-item top-bar-link">
-          <i class="fa-solid fa-phone"></i> 03407548422
-        </a>
-      </div>
+
+      <button class="announcement-nav-btn next" id="ticker-next" title="Next Announcement">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
     </div>
-  </header>
+  </aside>
 
   <!-- MAIN HEADER -->
   <div class="header-main">
@@ -61,6 +68,7 @@
       </div>
 
       <!-- HEADER ACTIONS -->
+      <div class="header-trust-badge"><i class="fa-solid fa-truck-fast"></i> Cash on Delivery Nationwide</div>
       <div class="header-actions">
         <!-- Wishlist -->
         <div class="action-item" onclick="showToast('Wishlist view opening soon')">
