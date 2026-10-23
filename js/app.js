@@ -408,9 +408,9 @@ function renderProducts() {
 
     return `
       <div class="product-card" data-id="${p.id}">
-        <span class="product-badge badge-${p.badgeType}">${p.badge}</span>
+        <span class="product-badge">${p.badge}</span>
         
-        <button class="product-wishlist-btn ${isWishlisted ? 'active' : ''}" onclick="toggleWishlist(${p.id})">
+        <button class="product-wishlist-btn ${isWishlisted ? 'active' : ''}" onclick="toggleWishlist(${p.id})" title="Add to Wishlist">
           <i class="fa-${isWishlisted ? 'solid' : 'regular'} fa-heart"></i>
         </button>
 
@@ -422,23 +422,12 @@ function renderProducts() {
         </div>
 
         <div class="product-details">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
             <span class="product-cat">${p.categoryName}</span>
-            <span style="font-size: 11px; font-weight: 700; color: #3BB77E; background: #DEF9EC; padding: 2px 6px; border-radius: 4px;">${p.code || ''}</span>
+            ${p.code ? `<span style="font-size: 10.5px; font-weight: 700; color: var(--primary); background: var(--primary-light); padding: 2px 6px; border-radius: 4px;">${p.code}</span>` : ''}
           </div>
 
-          <div class="product-rating">
-            <i class="fa-solid fa-star"></i>
-            <strong>${p.rating}</strong>
-            <span>(${p.reviews} verified)</span>
-          </div>
-
-          <h3 class="product-title" title="${p.title}">${p.title}</h3>
-
-          <div class="product-sizes-preview">
-            ${p.sizes.slice(0, 3).map(s => `<span class="size-pill">${s}</span>`).join('')}
-            ${p.sizes.length > 3 ? `<span class="size-pill">+${p.sizes.length - 3}</span>` : ''}
-          </div>
+          <h3 class="product-title" title="${p.title}" onclick="openQuickView(${p.id})">${p.title}</h3>
 
           <div class="product-footer">
             <div class="product-price-box">

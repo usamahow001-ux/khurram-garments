@@ -2,29 +2,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Quicksand:wght@500;600;700;800&display=swap');
 
 :root {
-  --primary: #3BB77E;
-  --primary-dark: #29A56C;
-  --primary-light: #DEF9EC;
-  --secondary: #FDC040;
-  --secondary-light: #FFF8E5;
-  --accent-pink: #F74B81;
-  --accent-pink-light: #FDE1EA;
-  --accent-blue: #67BCEE;
-  --accent-blue-light: #EBF4FC;
-  --heading: #253D4E;
-  --text-muted: #7E7E7E;
-  --text-body: #4F5D75;
-  --border: #ECECEC;
-  --bg-page: #F7F8F9;
-  --bg-surface: #FFFFFF;
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
-  --shadow-card: 0 8px 24px rgba(37, 61, 78, 0.06);
-  --shadow-hover: 0 16px 36px rgba(59, 183, 126, 0.16);
+  /* SIGNATURE KIDS FASHION PALETTE (ONE PRIMARY COLOR: POPPY CRIMSON / ROSE) */
+  --primary: #E11D48;          /* Vibrant, cheerful, premium kids apparel primary */
+  --primary-dark: #BE123C;     /* Deep royal crimson for hover states */
+  --primary-light: #FFF1F2;    /* Ultra-soft clean blush tint for badges & icon boxes */
+  --secondary: #0F172A;        /* Deep Slate / Midnight Navy */
+  --secondary-light: #F1F5F9;  /* Light slate tint */
+  --accent-gold: #F59E0B;      /* Warm golden yellow for star ratings */
+  --heading: #0F172A;          /* Slate 900 for clean luxury typography */
+  --text-body: #334155;        /* Slate 700 for high-contrast crisp readability */
+  --text-muted: #64748B;       /* Slate 500 for secondary details */
+  --border: #E2E8F0;           /* Clean subtle border */
+  --bg-page: #F8FAFC;          /* Clean airy boutique backdrop */
+  --bg-surface: #FFFFFF;       /* Crisp card white */
+  --shadow-sm: 0 2px 6px rgba(15, 23, 42, 0.04);
+  --shadow-card: 0 6px 20px rgba(15, 23, 42, 0.06);
+  --shadow-hover: 0 14px 32px rgba(225, 29, 72, 0.16);
   --radius-sm: 8px;
-  --radius-md: 14px;
-  --radius-lg: 20px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
   --radius-pill: 999px;
-  --transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition: all 0.24s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 * {
@@ -70,10 +68,10 @@ button {
 
 /* TOP ANNOUNCEMENT BAR */
 .top-bar {
-  background: #253D4E;
-  color: #B6C3C7;
-  font-size: 13px;
-  padding: 9px 0;
+  background: #0F172A;
+  color: #94A3B8;
+  font-size: 12.5px;
+  padding: 8px 0;
   border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 .top-bar .container {
@@ -143,9 +141,9 @@ button {
   letter-spacing: -0.3px;
 }
 .brand-text span {
-  font-size: 12px;
+  font-size: 11.5px;
   color: var(--primary);
-  font-weight: 600;
+  font-weight: 700;
   display: block;
 }
 
@@ -236,17 +234,16 @@ button {
   right: -8px;
   background: var(--primary);
   color: #fff;
-  font-size: 11px;
-  font-weight: 700;
-  min-width: 20px;
-  height: 20px;
+  font-size: 10.5px;
+  font-weight: 800;
+  min-width: 18px;
+  height: 18px;
   border-radius: var(--radius-pill);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0 4px;
-  box-shadow: 0 2px 6px rgba(59, 183, 126, 0.4);
-  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 2px 6px rgba(225, 29, 72, 0.35);
 }
 .action-badge.pulse {
   animation: badgeBounce 0.4s ease;
@@ -1735,7 +1732,13 @@ button {
   }
 
   /* TOP ANNOUNCEMENT BAR & DESKTOP NAV */
-  .top-bar { display: none !important; }
+  .top-bar {
+  background: #0F172A;
+  color: #94A3B8;
+  font-size: 12.5px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
   .nav-bar { display: none !important; }
 
   /* HEADER MAIN */
@@ -1763,8 +1766,11 @@ button {
     line-height: 1.1 !important;
   }
   .brand-text span {
-    font-size: 10px !important;
-  }
+  font-size: 11.5px;
+  color: var(--primary);
+  font-weight: 700;
+  display: block;
+}
 
   .header-actions {
     gap: 6px !important;
