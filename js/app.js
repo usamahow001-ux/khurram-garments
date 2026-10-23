@@ -218,8 +218,21 @@ const PRODUCTS = [
 ];
 
 // STATE
-let cart = JSON.parse(localStorage.getItem('khurram_cart')) || [];
-let wishlist = JSON.parse(localStorage.getItem('khurram_wishlist')) || [];
+let cart = [];
+try {
+  cart = JSON.parse(localStorage.getItem('khurram_cart')) || [];
+  if (!Array.isArray(cart)) cart = [];
+} catch (e) {
+  cart = [];
+}
+
+let wishlist = [];
+try {
+  wishlist = JSON.parse(localStorage.getItem('khurram_wishlist')) || [];
+  if (!Array.isArray(wishlist)) wishlist = [];
+} catch (e) {
+  wishlist = [];
+}
 let currentCategoryFilter = 'all';
 let currentSearchQuery = '';
 let activeQuickViewProduct = null;
@@ -584,51 +597,6 @@ function sendWhatsAppOrder() {
   window.open(encodedUrl, '_blank');
 }
 
-// =========================================================
-function nextAnnouncement() {
-    showAnnouncement((currentIdx + 1) % slides.length);
-  }
-
-  function prevAnnouncement() {
-    showAnnouncement((currentIdx - 1 + slides.length) % slides.length);
-  }
-
-  function startTicker() {
-    stopTicker();
-    tickerTimer = setInterval(nextAnnouncement, TICKER_INTERVAL_MS);
-  }
-
-  function stopTicker() {
-    if (tickerTimer) {
-      clearInterval(tickerTimer);
-      tickerTimer = null;
-    }
-  }
-
-  if (nextBtn) {
-    nextBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      nextAnnouncement();
-      startTicker();
-    });
-  }
-
-  if (prevBtn) {
-    prevBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      prevAnnouncement();
-      startTicker();
-    });
-  }
-
-  if (slider) {
-    slider.addEventListener('mouseenter', stopTicker);
-    slider.addEventListener('mouseleave', startTicker);
-  }
-
-  showAnnouncement(0);
-  startTicker();
-}
 
 // HERO BANNER SLIDER (TRADITION STORES STYLE - FIXED 5s AUTO-PLAY)
 // =========================================================
@@ -762,7 +730,7 @@ function filterCategoryFromBanner(cat) {
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+function initApp() {
   document.querySelectorAll('.cat-tab-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
       document.querySelectorAll('.cat-tab-btn').forEach(b => b.classList.remove('active'));
@@ -796,8 +764,14 @@ document.addEventListener('DOMContentLoaded', () => {
     wishlistBadge.textContent = wishlist.length;
   }
 
-  initHeroSlider();
-  updateCartUI();
-  renderProducts();
-});
+  try { initHeroSlider(); } catch (e) { console.error('initHeroSlider error:', e); }
+  try { updateCartUI(); } catch (e) { console.error('updateCartUI error:', e); }
+  try { renderProducts(); } catch (e) { console.error('renderProducts error:', e); }
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initApp);
+} else {
+  initApp();
+}
 
